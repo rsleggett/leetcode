@@ -1,23 +1,22 @@
 class Solution {
     public int minPartitions(String n) {
-        var split = Arrays.stream(n.split("")).mapToInt(Integer::parseInt).toArray();
-        var maxValue = 0;
-        var current = 0;
-        for (int i = 0; i < split.length; i++)
+        var maxValue = '0';
+        var current = '0';
+        for (int i = 0; i < n.length(); i++)
         {
-            current = split[i];
+            current = n.charAt(i);
             
             if (current > maxValue)
             {
                 maxValue = current;
             }
             
-            if (maxValue == 9)
+            if (maxValue == '9')
             {
                 break;
             }
         }
-        return maxValue;
+        return maxValue - '0';
     }
 }
 
