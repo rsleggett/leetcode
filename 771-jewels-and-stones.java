@@ -1,14 +1,14 @@
 class Solution {
     public int numJewelsInStones(String jewels, String stones) {
-        Set<Character> jewelsHash = new HashSet<>();
-        for(int i = 0; i < jewels.length(); i++)
+        int[] ascii = new int[256];
+        for(int i = 0; i < jewels.length(); i++) //O(n)
         {
-            jewelsHash.add(jewels.charAt(i));
+            ascii[jewels.charAt(i)] = 1; //O(1)
         }
         int count = 0;
-        for(int i = 0; i < stones.length(); i++)
+        for(int i = 0; i < stones.length(); i++) //O(m)
         {
-            count += jewelsHash.contains(stones.charAt(i)) ? 1:0;
+            count += ascii[stones.charAt(i)]; // O(1)
         }
         return count;
     }
@@ -16,3 +16,4 @@ class Solution {
 
 // bool[] alphabet = new bool[256];
 // alphabet[A] = 1;
+// O(m) + O(n)
