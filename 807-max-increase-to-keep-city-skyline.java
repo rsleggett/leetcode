@@ -11,12 +11,9 @@ class Solution {
                 int horzSkylineValue = westSkyline[i];
                 int vertSkylineValue = northSkyline[j]; 
                 int currentCellValue = grid[i][j];
-                int increase = currentCellValue;
-                while(currentCellValue < horzSkylineValue && currentCellValue < vertSkylineValue)
-                {
-                    currentCellValue++;
-                }
-                totalSum += currentCellValue - increase;
+                int increase = Math.min(horzSkylineValue, vertSkylineValue);
+                
+                totalSum += increase - currentCellValue;
             }
         }
         
