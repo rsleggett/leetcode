@@ -53,13 +53,4 @@ class Solution {
         }
         return skyline;
     }
-    
-    private int[] reverseArray(int[] array) {
-        int[] test = new int[array.length];
-        for(int i=0; i<array.length;i++)
-        {
-            test[i] = array[(array.length-1)-i];
-        }
-        return test;
-    }
 }
